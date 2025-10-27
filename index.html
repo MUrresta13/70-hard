@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="apple-touch-icon" href="assets/icon-512.png"/>
+<meta name="theme-color" content="#c6a968"/>
+<title>70 Hard: Prophetic Edition</title>
+</head>
+<body>
+<header>
+  <h1>🔱 70 Hard: The Prophetic Edition</h1>
+  <div id="userLine"><small class="muted">Not signed in</small></div>
+</header>
+<main>
+  <!-- AUTH -->
+  <div class="card" id="authCard">
+    <h3>Sign In</h3>
+    <label>Email</label>
+    <input id="email" type="email" placeholder="you@example.com"/>
+    <button class="primary" id="magicBtn">Send Magic Link</button>
+    <small class="muted">Use the same email enrolled in Supabase Auth. Open the link on this device.</small>
+  </div>
+
+  <!-- FIRST-TIME SETUP -->
+  <div class="card" id="setupCard" style="display:none">
+    <h3>Start Configuration</h3>
+    <div class="grid two">
+      <div>
+        <label>Display Name</label>
+        <input id="displayName" placeholder="Michael / Luis / Katherine"/>
+      </div>
+      <div>
+        <label>Role</label>
+        <select id="roleSel">
+          <option value="michael">Michael (NASB95)</option>
+          <option value="luis">Luis (NASB95)</option>
+          <option value="sister">Katherine (NLT)</option>
+        </select>
+      </div>
+      <div>
+        <label>Start Date</label>
+        <input id="startDate" type="date"/>
+      </div>
+      <div>
+        <label>Starting Weight (lbs)</label>
+        <input id="startWeight" type="number" step="0.1" min="50"/>
+      </div>
+      <div>
+        <label>Target Mode</label>
+        <select id="targetMode">
+          <option value="recomp">Recomp (Michael)</option>
+          <option value="fat_loss">Fat Loss (Luis)</option>
+          <option value="gain">Muscle Gain (Katherine)</option>
+        </select>
+      </div>
+    </div>
+    <button class="primary" id="saveConfig">Save</button>
+    <small class="muted">Sets your locks and default weekly % target.</small>
+  </div>
+
+  <!-- TODAY -->
+  <div class="card" id="todayCard" style="display:none">
+    <h3 id="dayTitle">Day …</h3>
+    <div id="lockNote"></div>
+    <div id="checks" class="grid three" style="margin-top:8px">
+      <label><input type="checkbox" id="workout"> 45m Physical</label>
+      <label><input type="checkbox" id="spiritual"> 45m Spiritual</label>
+      <label><input type="checkbox" id="outdoor"> One is Outdoors</label>
+      <label><input type="checkbox" id="water"> 1 Gallon Water</label>
+      <label><input type="checkbox" id="bible"> Read Today</label>
+    </div>
+
+    <hr/>
+    <h4>Daily Photos (public to team)</h4>
+    <label>Physical Workout Photo</label>
+    <input id="photoPhysical" type="file" accept="image/*" capture="environment"/>
+    <label>Spiritual Workout Photo</label>
+    <input id="photoSpiritual" type="file" accept="image/*" capture="environment"/>
+
+    <button class="primary" id="saveDaily" style="margin-top:12px">Save Today</button>
+
+    <hr/>
+    <div id="readingBlock"></div>
+
+    <hr/>
+    <div id="journal">
+      <h4>One Word — Journal</h4>
+      <label>Revelation (shared with team)</label>
+      <textarea id="rev" rows="3" placeholder="What did God highlight?"></textarea>
+      <label>Conviction (private)</label>
+      <textarea id="conv" rows="2" placeholder="What needs to change?"></textarea>
+      <label>Transformation (private)</label>
+      <textarea id="trans" rows="2" placeholder="What will I do now?"></textarea>
+      <button class="primary" id="saveBible">Save Journal</button>
+    </div>
+  </div>
+
+  <!-- WEEKLY -->
+  <div class="card" id="weeklyCard" style="display:none">
+    <h3 id="weekTitle">Weekly Check</h3>
+    <label>Weigh-In (lbs)</label>
+    <input id="weighIn" type="number" step="0.1"/>
+    <label>Weekly Progress Photo (public to team)</label>
+    <input id="weeklyPhoto" type="file" accept="image/*" capture="environment"/>
+    <div id="goalHelp" class="badge" style="margin-top:8px"></div>
+    <button class="primary" id="saveWeekly" style="margin-top:8px">Save Weekly</button>
+    <small class="muted">Weights remain private; only the existence of a weigh-in is known if you add a progress grid later.</small>
+  </div>
+
+  <!-- TEAM FEED -->
+  <div class="card" id="teamCard" style="display:none">
+    <h3>Team Feed — Revelations</h3>
+    <div id="teamRevs"></div>
+  </div>
+
+  <!-- TEAM GALLERY -->
+  <div class="card" id="galleryCard" style="display:none">
+    <h3>Team Gallery</h3>
+    <h4>Daily Photos</h4>
+    <div id="dailyGallery"></div>
+    <hr/>
+    <h4>Weekly Progress</h4>
+    <div id="weeklyGallery"></div>
+  </div>
+</main>
+
+<script type="module" src="app.js"></script>
+<script type="module" src="bible.js"></script>
+</body>
+</html>
