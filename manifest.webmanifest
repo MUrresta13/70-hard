@@ -1,0 +1,11 @@
+{
+  "name": "70 Hard: Prophetic Edition",
+  "short_name": "70 Hard",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f0f12",
+  "theme_color": "#c6a968",
+  "icons": [
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
