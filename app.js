@@ -2,8 +2,8 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { plan, promptsForDay, validateCloze } from "./bible.js";
 
-const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
-const SUPABASE_ANON = "YOUR-ANON-KEY";
+const SUPABASE_URL = "https://jqfyctgrrmyctsrtpucc.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpxZnljdGdycm15Y3RzcnRwdWNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1MTcxNjQsImV4cCI6MjA3NzA5MzE2NH0.dYbhLYrZohhdtHDi4Pu1UqY7MZHJNpKDJNyh3eWXfe4";
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
